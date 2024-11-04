@@ -1,5 +1,4 @@
-% Définir des tâches sous forme de faits statiques
-% task(ID, Description, Assi% 1. Créer une tâche
+% 1. Créer une tâche
 create_task(ID, Description, Assignee) :-
     assertz(task(ID, Description, Assignee, false)),
     write('Task created: '), write(ID), nl.

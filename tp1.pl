@@ -23,8 +23,20 @@ display_tasks :-
     write('- Assignee: '), write(Assignee), nl,
     write('- Completion status: '), write(Status), nl.
 
+% 5. Afficher les tâches assignées à un utilisateur spécifique
+display_tasks_assigned_to(Assignee) :-
+    task(ID, Description, Assignee, Status),
+    write('Task '), write(ID), write(': '), nl,
+    write('- Description: '), write(Description), nl,
+    write('- Completion status: '), write(Status), nl.
 
-
+% 6. Afficher les tâches terminées
+display_completed_tasks :-
+    task(ID, Description, Assignee, true),
+    write('Task '), write(ID), write(': '), nl,
+    write('- Description: '), write(Description), nl,
+    write('- Assignee: '), write(Assignee), nl,
+    write('- Completion status: true'), nl.
 
 
 
